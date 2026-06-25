@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+openai==1.51.0
+groq==0.11.0
+chromadb
+PyPDF2
+python-multipart
+pydantic
+sentence-transformers
