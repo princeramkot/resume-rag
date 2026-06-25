@@ -139,3 +139,4 @@ resume-rag/
 └── frontend/
     └── index.html        # Chat UI (single file, no build step)
 ```
+![img.png](img.png)
