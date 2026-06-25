@@ -36,7 +36,7 @@ Overlap prevents context loss at chunk boundaries.
 
 ### 2. Embeddings (`embed`)
 Each chunk is converted to a **1 536-dimension float vector** via  
-`text-embedding-3-small`. Similar meaning → nearby vectors.
+`SentenceTransformer`. Similar meaning → nearby vectors.
 
 ### 3. Vector Search (`vector_search`)
 The user's question is embedded, then ChromaDB finds the **top-5 closest chunks**  
@@ -48,7 +48,7 @@ using cosine similarity via an HNSW (Hierarchical Navigable Small World) index.
 
 ### Prerequisites
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Set API keys
@@ -65,9 +65,7 @@ uvicorn main:app --reload --port 8000
 
 ### Open the frontend
 ```bash
-open frontend/index.html
-# or serve it:
-python -m http.server 3000 --directory frontend
+open index.html
 ```
 
 ---
@@ -96,7 +94,7 @@ curl -X POST http://localhost:8000/chat \
     { "text": "...", "similarity": 0.89, "chunk_id": "chunk_2" }
   ],
   "model": "llama-3.3-70b-versatile (Groq)",
-  "embedding_model": "text-embedding-3-small (OpenAI)"
+  "embedding_model": "SentenceTransformer"
 }
 ```
 
